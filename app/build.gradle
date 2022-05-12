@@ -1,9 +1,12 @@
 plugins {
     id 'com.android.application'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
     compileSdk 32
+
+    namespace "com.degalex.trueconftest"
 
     defaultConfig {
         applicationId "com.degalex.trueconftest"
@@ -28,15 +31,34 @@ android {
         }
     }
 
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
+    }
+
+    viewBinding {
+        enabled true
     }
 }
 
 dependencies {
 
+    // Appcompat
     implementation "androidx.appcompat:appcompat:$appcompat_version"
+
+    // Material
     implementation "com.google.android.material:material:$material_version"
+
+    // RxJava
+    implementation "io.reactivex.rxjava3:rxjava:$rxjava_version"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    annotationProcessor "com.google.dagger:hilt-android-compiler:$hilt_version"
 }
