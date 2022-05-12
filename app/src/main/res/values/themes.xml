@@ -1,0 +1,5 @@
+<resources>
+
+    <style name="Theme.TrueConfTest" parent="Theme.MaterialComponents.DayNight.NoActionBar"/>
+
+</resources>
