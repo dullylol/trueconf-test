@@ -23,5 +23,18 @@ public class MainActivity extends BaseActivity {
         setContentView(binding.getRoot());
 
         mainViewModel = getViewModel(MainViewModel.class);
+
+        mainViewModel.onAttachActivity(this);
+
+        if (savedInstanceState == null) {
+            mainViewModel.onFirstLaunch();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        mainViewModel.onDetachActivity();
+
+        super.onDestroy();
     }
 }

@@ -10,11 +10,11 @@ public class ActivityHolder {
         return activity;
     }
 
-    void attachActivity(AppCompatActivity activity) {
+    public void attachActivity(AppCompatActivity activity) {
         this.activity = activity;
     }
 
-    void detachActivity() {
+    public void detachActivity() {
         activity = null;
     }
 }
